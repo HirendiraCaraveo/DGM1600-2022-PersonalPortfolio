@@ -128,6 +128,9 @@
    url(/images/wall1.jpeg);
  }
 
+ footer i {
+  vertical-align: middle;
+}
   /* 980px / 16px = 61.25em */
   @media (max-width: 61.25em) {
     html {
