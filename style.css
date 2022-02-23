@@ -1,6 +1,11 @@
 :root {
-    --main-white: #f0f0f0;
-    --main-blue: #45567d;
+  --main-white: #f0f0f0;
+  --main-red: #b10606;
+  --Teal-Dark-1-hex: #2C3532;
+  --Teal-Dark-2-hex: #0F6466;
+  --Teal-Dark-3-hex: #D8B08C;
+  --Teal-Dark-4-hex: #FFCB9A;
+  --Teal-Dark-5-hex: #D2E8E3;
   }
   
   * {
@@ -35,7 +40,7 @@
   }
   
   .navlist a:hover {
-    background: var(--main-blue);
+    background: var(--main-red);
   }
   
   a {
@@ -54,6 +59,28 @@
     font-size: 5rem;
   }
   
+  #projects {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-tile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .project-tile {
+    margin: 2rem;
+  }
+
+  .project-tile img {
+    width: 10rem;
+
+  }
+
+
   /* 980px / 16px = 61.25em */
   @media (max-width: 61.25em) {
     html {
