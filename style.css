@@ -29,6 +29,7 @@
   .navlist {
     display: flex;
     list-style-type:none;
+    font-size: large;
   }
   
   .navlist a {
@@ -81,11 +82,20 @@
 
   .project-tile {
     margin: 2rem;
+    
   }
 
   .project-tile img {
     width: 10rem;
+    border: thin #c0c0c0 solid;
+    margin: auto;
+  }  
+ 
 
+  figcaption {
+    color: rgb(92, 3, 3);
+    padding: 3px;
+    text-align: center;
   }
 
   #contact {
