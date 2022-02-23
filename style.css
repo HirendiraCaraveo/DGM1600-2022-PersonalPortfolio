@@ -1,11 +1,9 @@
 :root {
   --main-white: #f0f0f0;
   --main-red: #d10966;
-  --Dark-1-hex: #aa7197;
-  --Dark-2-hex: #8d7979;
-  --Dark-3-hex: #D8B08C;
-  --Dark-4-hex: #97928c;
-  --Dark-5-hex: #D2E8E3;
+  --Dark-1-hex: #d6c84b;
+  --Dark-2-hex: #ad79a5;
+
   }
   
   * {
@@ -49,6 +47,8 @@
   
   #welcome-section {
     height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
+    url("https://unsplash.com/photos/NkQD-RHhbvY");
     background-color: rgb(235, 183, 218);
     display: flex;
     justify-content: center;
