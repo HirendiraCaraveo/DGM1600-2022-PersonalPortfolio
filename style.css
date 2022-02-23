@@ -48,7 +48,7 @@
   #welcome-section {
     height: 100vh;
     background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-    url("https://unsplash.com/photos/NkQD-RHhbvY");
+     url(/images/wall.jpeg);
     background-color: rgb(235, 183, 218);
     display: flex;
     justify-content: center;
@@ -64,12 +64,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(rgba(255, 0, 191, 0.384),rgba(255, 255, 0, 0.5),rgba(0, 0, 255, 0.5)),
+    url(/images/wall2.jpeg);
     background-color: var(--Dark-2-hex)
   }
 
   #projects h1{
     color: aliceblue;
   }
+  
   .project-tile {
     display: flex;
     flex-wrap: wrap;
@@ -89,6 +92,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 191, 0.384)),
+    url(/images/wall1.jpeg);
     background-color: var(--Dark-1-hex);
     
   }
@@ -106,7 +111,8 @@
  footer{
    padding: 3rem;
    text-align: center;
-   background-color: var(--Dark-1-hex);
+   background-image: linear-gradient(rgba(255, 0, 191, 0.384),rgba(0, 0, 255, 0.5)),
+   url(/images/wall1.jpeg);
  }
 
   /* 980px / 16px = 61.25em */
