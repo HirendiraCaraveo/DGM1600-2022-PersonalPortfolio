@@ -80,6 +80,16 @@
 
   }
 
+  #contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+ .contact-links a {
+   font-size: x-large;
+   padding: 3rem;
+ }
 
   /* 980px / 16px = 61.25em */
   @media (max-width: 61.25em) {
