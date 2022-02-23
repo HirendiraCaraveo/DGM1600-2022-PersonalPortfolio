@@ -1,8 +1,8 @@
 :root {
   --main-white: #f0f0f0;
   --main-red: #d10966;
-  --Dark-1-hex: #791457;
-  --Dark-2-hex: #070707;
+  --Dark-1-hex: #aa7197;
+  --Dark-2-hex: #8d7979;
   --Dark-3-hex: #D8B08C;
   --Dark-4-hex: #97928c;
   --Dark-5-hex: #D2E8E3;
@@ -66,7 +66,7 @@
     align-items: center;
     background-color: var(--Dark-2-hex)
   }
-  
+
   #projects h1{
     color: aliceblue;
   }
@@ -104,10 +104,11 @@
  }
  
  footer{
-   margin: 3rem;
+   padding: 3rem;
    text-align: center;
-   background-color: var;
+   background-color: var(--Dark-1-hex);
  }
+
   /* 980px / 16px = 61.25em */
   @media (max-width: 61.25em) {
     html {
