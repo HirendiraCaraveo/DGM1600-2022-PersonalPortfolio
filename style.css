@@ -48,7 +48,7 @@
   
   #welcome-section {
     height: 90vh;
-    background-image: linear-gradient( rgba(69, 69, 133), rgba(155, 56, 130, 0.507)),
+    background-image: linear-gradient( rgba(69, 69, 133), rgba(155, 56, 130, 0.555)),
      url(/images/wall7.jpg);
     background-color: rgb(235, 183, 218);
     display: flex;
@@ -92,14 +92,27 @@
     margin: auto;
   }  
  
+  .project-tile figure {
+    margin: 1rem;
+       
+  }
 
   .project-tile figcaption {
+    font-size: x-large;
+    text-align: center;
+    color:azure 
+    padding: 3px;
+    text-align: center;
+    display: flex;
+   }
+ 
+ /*  .project-tile figcaption {
     color: rgb(92, 3, 3);
     padding: 3px;
     text-align: center;
     display: flex;
     
-  }
+  }*/
 
   #contact {
     display: flex;
