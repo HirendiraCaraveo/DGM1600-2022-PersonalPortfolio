@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 191, 0.384)),
+  url(/images/wall1.jpeg);
+}
 main {
   display: flex;
   flex-wrap: wrap;
@@ -15,13 +19,23 @@ figure {
 
 figure img {
   max-height: 20rem;
+  border: 1.5mm ridge  rgba(255, 0, 191, 0.253);
+}
+
+figcaption {
+  color: rgb(245, 236, 236);
+  background-color: linear-gradient(rgba(0, 0, 255, 0.164), rgba(255, 0, 191, 0.253));
+  text-align: center;
+  animation-name: slide;
 }
 
 button {
-  width: 10rem;
-  height: 3rem;
+  width: 15rem;
+  height: 2.5rem;
   margin: 1rem;
-  background-color: blue;
-  color: aliceblue;
+  color: rgb(10, 10, 10);
+  background-color: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 191, 0.253));
   font-size: large;
+  text-align: center;
+  
 }

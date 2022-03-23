@@ -11,21 +11,12 @@ allCharsButton.addEventListener('click', function () {
 })
 
 const maleCharacters = people.filter((person) => person.gender === 'male') // elegant filter!
-
-/* const maleCharacters = people.filter((person) => {
-  console.log(person)
-  return person.gender === 'male'
-}) */
-
-// TODO: make a filter for female characters
-// TODO: make a filter for other characters
-
+const femaleCharacters = people.filter((person) => person.gender === 'female') 
 const otherCharacters = people.filter((person) => {
   if (
-    person.gender !== 'male' && person.gender !== 'female'
-    // person.gender === 'hermaphrodite'  ||
-    // person.gender === 'none' ||
-    // person.gender === 'n/a'
+    person.gender === 'hermaphrodite'  ||
+    person.gender === 'none' ||
+    person.gender === 'n/a'
   ) {
     return person
   }
@@ -35,8 +26,9 @@ const maleCharsButton = document.createElement('button')
 maleCharsButton.textContent = 'Male Characters'
 maleCharsButton.addEventListener('click', () => populateDOM(maleCharacters))
 
-// TODO: create a female characters button and add it to the DOM
-// TODO: create a other characters button and add it to the DOM
+const femaleCharactersButton = document.createElement('button')
+femaleCharactersButton.textContent = 'Female Characters'
+femaleCharactersButton.addEventListener('click', () => populateDOM(femaleCharacters))
 
 const otherCharactersButton = document.createElement('button')
 otherCharactersButton.textContent = 'Other Characters'
@@ -44,7 +36,9 @@ otherCharactersButton.addEventListener('click', () => populateDOM(otherCharacter
 
 header.appendChild(allCharsButton)
 header.appendChild(maleCharsButton)
+header.appendChild(femaleCharactersButton)
 header.appendChild(otherCharactersButton)
+
 
 function populateDOM(characters) {
   // loop through all the characters and make figure elements and insert them into DOM
