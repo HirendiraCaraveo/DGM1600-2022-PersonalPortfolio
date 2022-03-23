@@ -47,9 +47,9 @@
   }
   
   #welcome-section {
-    height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),
-     url(/images/wall.jpeg);
+    height: 90vh;
+    background-image: linear-gradient( rgba(69, 69, 133), rgba(155, 56, 130, 0.507)),
+     url(/images/wall7.jpg);
     background-color: rgb(235, 183, 218);
     display: flex;
     justify-content: center;
@@ -71,7 +71,7 @@
   }
 
   #projects h1{
-    color: aliceblue;
+    color: rgb(12, 12, 12);
   }
   
   .project-tile {

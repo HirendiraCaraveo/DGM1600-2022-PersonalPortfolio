@@ -5,5 +5,28 @@
 }
 
 h1 {
-  color: blue;
+  color: rgb(236, 236, 243);
+  text-align: center;
 }
+
+body{
+  background-image: linear-gradient(black, gray)
+
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+figure {
+  margin: 1rem;
+  border:  thick double #3c3e3f;
+}
+
+figcaption {
+  font-size: xx-large;
+  text-align: center;
+  color:azure 
+ }
