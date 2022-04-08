@@ -72,3 +72,5 @@ simplifiedSenators().forEach(senator => {
 // TODO: Incorporate a way to select the members of the house of representatives
 
 
+
+
