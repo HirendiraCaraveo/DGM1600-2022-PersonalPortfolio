@@ -1,7 +1,7 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
 
-const allCongressMembers = [...senators, ...representatives] // modern way to combine arrays... like a genius
+const members = [...senators, ...representatives] // modern way to combine arrays... like a genius
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
@@ -65,5 +65,8 @@ simplifiedSenators().forEach(senator => {
   }
 })
 
-
+document.getElementById("Rep").addEventListener("click", function() {
+  removeChildren(document.getElementById("Senators"))
+  populateSenatorDiv(simplifiedMembers("Rep"))
+})
 
