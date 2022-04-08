@@ -1,0 +1,48 @@
+body {
+  background-color: #222222;
+}
+
+header {
+  font-size: xx-large;
+  color: aliceblue;
+  text-align: center;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.shipViewer {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.shipViewer img {
+  padding: 5rem;
+}
+
+.box {
+  background-color: bisque;
+  font-size: xx-large;
+  text-align: center;
+}
+
+/* .modal-background {
+  background-color: #333;
+} */
+
+.nav {
+  min-width: 16rem;
+}
+
+ul {
+margin: 1rem;
+list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: x-large;
+}
