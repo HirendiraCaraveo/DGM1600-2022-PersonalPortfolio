@@ -15,8 +15,8 @@ function simplifiedSenators() {
       name: `${senator.first_name}${middleName}${senator.last_name}`,
       party: senator.party,
       gender: senator.gender,
-      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-200px.jpeg`,
-      seniority: +senator.seniority,
+      imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
+      seniority: senator.seniority,
       missedVotesPct: senator.missed_votes_pct,
       loyaltyPct: senator.votes_with_party_pct
     }
@@ -64,13 +64,6 @@ simplifiedSenators().forEach(senator => {
     loyaltyList.appendChild(listItem)
   }
 })
-
-// TODO items to consider for your final project
-// TODO: Some sort of UI for sorting by party affiliation or by party and gender with a count
-// TODO: Much better styling of the grid of senators and their names.
-// TODO: Maybe include more data with each congress member such as links to their Twitter or Facebook pages
-// TODO: Incorporate a way to select the members of the house of representatives
-
 
 
 
