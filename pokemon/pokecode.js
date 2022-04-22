@@ -20,6 +20,7 @@ class Pokemon {
 
 const pokeHeader = document.querySelector('header')
 const pokeGrid = document.querySelector('.pokegrid')
+
 const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
 pokeHeader.appendChild(newButton)
@@ -45,12 +46,19 @@ newButton.addEventListener('click', () => {
   populatePokeCard(newPokemon)
 })
 
-const Button = document.querySelector('Button')
+const Button = document.createElement('Button')
 Button.addEventListener('click', () => {
   const allByType = getAllPokemonByType('water')
   allByType.forEach((item) => populatePokeCard(item))
 })
 
+
+const otherButton = document.createElement('otherPokemon')
+otherButton.addEventListener('click', () => {
+  let limit = prompt('How many more Pokemon should I load?')
+  let offset = prompt('At which Pokemon ID should I start loading?')
+  loadPokemon(offset, limit) 
+})
 
 function makeAbilitiesArray(commaString) {
   // example comma string 'run-away, gluttony'
@@ -85,7 +93,7 @@ async function loadPokemon(offset = 0, limit = 25) {
     }
     loadedPokemon.push(simplifiedPokemon)
     populatePokeCard(simplifiedPokemon)
-  }
+  } return simplifiedPokemon
 }
 
 function populatePokeCard(pokemon) {
