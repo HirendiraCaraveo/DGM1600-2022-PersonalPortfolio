@@ -138,7 +138,7 @@ function populateCardBack(pokemon) {
   const label1 = document.createElement('h4')
   label1.textContent = 'Types'
   pokeBack.appendChild(label)
-  pokeBack.appendChild(label1)
+
 
   const abilityList = document.createElement('ul')
   pokemon.abilities.forEach((abilityItem) => {
@@ -153,6 +153,7 @@ function populateCardBack(pokemon) {
     typeslist.appendChild(typeItem)
   })
   pokeBack.appendChild(abilityList)
+  pokeBack.appendChild(label1)
   pokeBack.appendChild(typeslist)
 
   return pokeBack
