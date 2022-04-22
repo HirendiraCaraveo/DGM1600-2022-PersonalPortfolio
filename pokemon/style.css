@@ -3,6 +3,11 @@
   box-sizing: border-box;
 }
 
+body{
+  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.692),rgba(179, 255, 0, 0.5), rgba(21, 255, 0, 0.384)),
+  url(/images/wall1.jpeg);
+}
+
 .pokegrid {
   display: flex;
   flex-wrap: wrap;
@@ -62,4 +67,17 @@ figure img {
 ul {
   list-style-type: '\01F525'; 
   /* The unicode for the fire emoji */
+}
+
+button {
+  width: 10rem;
+  height: 2.5rem;
+  margin: 1rem;
+  color: rgb(250, 241, 241);
+  background: linear-gradient(rgba(48, 199, 10, 0.884), rgba(9, 9, 170, 0.884), rgba(237, 252, 32, 0.884));;
+  border: 1.5mm ridge  rgba(2, 2, 32, 0.253);
+  background-color: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
+  font-size: large;
+  text-align: center;
+  
 }
