@@ -24,9 +24,9 @@ const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
 pokeHeader.appendChild(newButton)
 newButton.addEventListener('click', () => {
-  const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
+  const pokeName = prompt('What is the name of your new Pokemon?', 'Irhemon')
   const pokeHeight = prompt("What is the Pokemon's height?", 80)
-  const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
+  const pokeWeight = prompt("What is the Pokemon's weight?", 2400)
   const pokeAbilities = prompt(
     "What are your Pokemon's abilities? (use a comma separated list)",
   )
@@ -44,6 +44,13 @@ newButton.addEventListener('click', () => {
   console.log(newPokemon)
   populatePokeCard(newPokemon)
 })
+
+const Button = document.querySelector('Button')
+Button.addEventListener('click', () => {
+  const allByType = getAllPokemonByType('water')
+  allByType.forEach((item) => populatePokeCard(item))
+})
+
 
 function makeAbilitiesArray(commaString) {
   // example comma string 'run-away, gluttony'
@@ -128,7 +135,10 @@ function populateCardBack(pokemon) {
   pokeBack.className = 'cardFace back'
   const label = document.createElement('h4')
   label.textContent = 'Abilities'
+  const label1 = document.createElement('h4')
+  label1.textContent = 'Types'
   pokeBack.appendChild(label)
+  pokeBack.appendChild(label1)
 
   const abilityList = document.createElement('ul')
   pokemon.abilities.forEach((abilityItem) => {
@@ -136,11 +146,34 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name
     abilityList.appendChild(listItem)
   })
+  const typeslist = document.createElement('ul')
+  pokemon.types.forEach((pokeType) => {
+    const typeItem = document.createElement('li')
+    typeItem.textContent = pokeType.type.name
+    typeslist.appendChild(typeItem)
+  })
   pokeBack.appendChild(abilityList)
+  pokeBack.appendChild(typeslist)
 
   return pokeBack
 }
 
+
+function typesBackground(pokemon, card) {
+  let pokeType1 = pokemon.types[0].type.name
+  let pokeType2 = pokemon.types[1]?.type.name
+  
+  if(!pokeType2) {
+    card.style.setProperty('background', getPokeTypeColor(pokeType1))
+  } else {
+     card.style.setProperty(
+      'background',
+      `linear-gradient(${getPokeTypeColor(pokeType1)}, ${getPokeTypeColor(
+        pokeType2,
+      )})`,
+    )
+  }
+}
 function getPokeTypeColor(pokeType) {
   // if(pokeType === 'grass') return '#00FF00'
   let color
