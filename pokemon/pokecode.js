@@ -11,7 +11,6 @@ const getAPIData = async (url) => {
 
 class Pokemon {
   constructor(name, height, weight, abilities, types) {
-    // would need to add 'moves' property to this constructor functionl... if I decide to show moves on the card
     ;(this.id = 9001),
       (this.name = name),
       (this.height = height),
@@ -53,8 +52,7 @@ newButton.addEventListener('click', () => {
     "What are your Pokemon's types? (up to 2 types separated by a space)",
   )
 
-  //TODO: Prompt the user for a set of moves if you want to show them
-
+ 
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
@@ -215,7 +213,7 @@ function filterPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
 }
 
-// not figured out yet what the UI might be for sorted/filtered pokemon...
+
 const typeSelect = document.querySelector('.typeSelect')
 typeSelect.addEventListener('change', (event) => {
   const usersTypeChoice = event.target.value.toLowerCase()
