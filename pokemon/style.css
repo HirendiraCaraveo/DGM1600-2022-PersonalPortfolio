@@ -50,7 +50,7 @@ body{
 }
 
 .back {
-  background: aliceblue;
+  background: rgb(187, 226, 142);
   transform: rotateY(180deg);
 }
 
@@ -70,7 +70,7 @@ figcaption {
   font-size: 130%;
   line-height: 3em;
     } 
-    
+
 ul {
   list-style-type: '\01F525'; 
   /* The unicode for the fire emoji */
