@@ -4,7 +4,54 @@
   box-sizing: border-box;
 }
 
+h1 {
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  color: rgb(1, 1, 92);
+}
+
+h2 {
+  margin: 1em;
+  font-family: 'Merienda', cursive;
+}
+
 .senatorsDiv {
   display: flex;
   flex-wrap: wrap;
+}
+button {
+  display: wrap;
+  justify-content: space-between;
+  text-align: center;
+  width: 10rem;
+  height: 2.5rem;
+  margin: 1rem;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  color: rgb(250, 241, 241);
+  border: 1.5mm ridge  rgba(2, 2, 32, 0.253);
+  background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
+  font-size: large;
+  text-align: center;
+  
+}
+
+figure {
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  margin: 1em;
+  color: white;
+  background: linear-gradient(-90deg, rgb(5, 1, 78) 29%, rgba(168, 10, 21, 0.974) 100%, rgba(0,212,255,1) 100%);
+  padding: 3px;
+}
+
+figcaption {
+  text-align: center;
+ font-size: small;
+ 
 }
