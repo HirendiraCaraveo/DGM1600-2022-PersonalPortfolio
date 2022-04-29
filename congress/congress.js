@@ -24,6 +24,40 @@ function simplifiedSenators() {
   })
 }
 
+function simplifiedMembers(chamberFilter) {
+  if(chamberFilter === "D" | chamberFilter === "R"){
+    const filteredArray = members.filter(member => chamberFilter ? member.party === chamberFilter : member)
+    return filteredArray.map(senator => {
+      const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
+      return {
+        id: senator.id,
+        name: `${senator.first_name}${middleName}${senator.last_name}`,
+        party: senator.party,
+        imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
+        gender: senator.gender,
+        seniority: +senator.seniority,
+        missedVotesPct: senator.missed_votes_pct,
+        loyaltyPct: senator.votes_with_party_pct,
+      }
+    })
+  }
+  else{
+    const filteredArray = members.filter(member => chamberFilter ? member.short_title === chamberFilter : member)
+    return filteredArray.map(senator => {
+      const middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
+      return {
+        id: senator.id,
+        name: `${senator.first_name}${middleName}${senator.last_name}`,
+        party: senator.party,
+        imgURL: `https://www.govtrack.us/static/legislator-photos/${senator.govtrack_id}-100px.jpeg`,
+        gender: senator.gender,
+        seniority: +senator.seniority,
+        missedVotesPct: senator.missed_votes_pct,
+        loyaltyPct: senator.votes_with_party_pct,
+      }
+    })
+  }
+}
 const simpleSenators = simplifiedSenators()
 
 function populateSenatorDiv(senatorArray) {
@@ -60,6 +94,14 @@ seniorityHeading.textContent = `The most senior member of the senate is ${mostSe
 
 simplifiedSenators().forEach(senator => {
   if(senator.loyaltyPct === 100) {
+    let listItem = document.createElement('li')
+    listItem.textContent = senator.name
+    loyaltyList.appendChild(listItem)
+  }
+})
+
+simplifiedMembers().forEach(senator => {
+  if(senator.loyaltyPct === 50) {
     let listItem = document.createElement('li')
     listItem.textContent = senator.name
     loyaltyList.appendChild(listItem)
