@@ -221,10 +221,3 @@ typeSelect.addEventListener('change', (event) => {
   removeChildren(pokeGrid)
   pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
 })
-
-function calculateHP() {
-  const mostHP = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})
-
-  const messageArea = document.querySelector('.messageArea')
-  messageArea.textContent = `${mostHP.name[0].toUpperCase()}${mostHP.name.substring(1)} has the most HP at ${mostHP.hp}`
-}

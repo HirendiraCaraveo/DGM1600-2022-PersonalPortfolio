@@ -8,6 +8,15 @@ body{
   url(/images/wall1.jpeg);
 }
 
+h1 {
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+  font-size: xx-large;
+  display: flex;
+  justify-content: center;
+  color: yellow;
+}
+
 .pokegrid {
   display: flex;
   flex-wrap: wrap;
