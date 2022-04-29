@@ -42,7 +42,7 @@ const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
 pokeHeader.appendChild(newButton)
 newButton.addEventListener('click', () => {
-  const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
+  const pokeName = prompt('What is the name of your new Pokemon?', 'Irhemon')
   const pokeHeight = prompt("What is the Pokemon's height?", 80)
   const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
   const pokeAbilities = prompt(

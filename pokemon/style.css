@@ -64,6 +64,13 @@ figure img {
   width: 200px;
 }
 
+figcaption {
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 130%;
+  line-height: 3em;
+    } 
+    
 ul {
   list-style-type: '\01F525'; 
   /* The unicode for the fire emoji */
@@ -73,10 +80,15 @@ button {
   width: 10rem;
   height: 2.5rem;
   margin: 1rem;
+  display: wrap;
+  justify-content: space-between;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
   color: rgb(250, 241, 241);
-  background: linear-gradient(rgba(48, 199, 10, 0.884), rgba(9, 9, 170, 0.884), rgba(237, 252, 32, 0.884));;
   border: 1.5mm ridge  rgba(2, 2, 32, 0.253);
-  background-color: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
+  background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
   font-size: large;
   text-align: center;
   
