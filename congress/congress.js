@@ -108,6 +108,7 @@ simplifiedMembers().forEach(senator => {
   }
 })
 
+
 document.getElementById("Rep").addEventListener("click", function() {
   removeChildren(document.getElementById("Senators"))
   populateSenatorDiv(simplifiedMembers("Rep"))
