@@ -3,8 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-body{
-  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.692)); 
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 0, 0, 0.692));
+}
+
+header {
+  margin: 2rem;
 }
 
 h1 {
@@ -15,18 +20,21 @@ h1 {
   color: rgb(1, 1, 92);
 }
 
+hr{
+  border: 1rem solid red;
+}
 h3 {
   text-align: center;
   font-weight: 700;
   font-size: x-large;
- color: rgb(92, 19, 1);
+  color: rgb(92, 19, 1);
 }
 
 ul {
   font-weight: 700;
   font-size: large;
-  margin:  0 0 0 5rem;
- color: rgb(92, 19, 1);
+  margin: 0 0 0 5rem;
+  color: rgb(92, 19, 1);
 }
 
 .senatorsDiv {
@@ -45,11 +53,11 @@ button {
   letter-spacing: 1px;
   cursor: pointer;
   color: rgb(250, 241, 241);
-  border: 1.5mm ridge  rgba(2, 2, 32, 0.253);
+  border: 1.5mm ridge rgba(2, 2, 32, 0.253);
   background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
   font-size: large;
   text-align: center;
-  
+
 }
 
 figure {
@@ -58,12 +66,12 @@ figure {
   flex-direction: column;
   margin: 1em;
   color: white;
-  background: linear-gradient(-90deg, rgb(5, 1, 78) 29%, rgba(168, 10, 21, 0.974) 100%, rgba(0,212,255,1) 100%);
+  background: linear-gradient(-90deg, rgb(5, 1, 78) 29%, rgba(168, 10, 21, 0.974) 100%, rgba(0, 212, 255, 1) 100%);
   padding: 3px;
 }
 
 figcaption {
   text-align: center;
- font-size: small;
- 
+  font-size: small;
+
 }
