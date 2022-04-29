@@ -93,3 +93,8 @@ button {
   text-align: center;
   
 }
+.typeSelect {
+  background-color: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
+  color: black;
+  font-size: large;
+}
