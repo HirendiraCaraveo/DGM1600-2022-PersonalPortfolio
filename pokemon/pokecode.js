@@ -1,3 +1,5 @@
+import { removeChildren } from '../utils/index.js'
+
 const getAPIData = async (url) => {
   try {
     const result = await fetch(url)
@@ -9,25 +11,41 @@ const getAPIData = async (url) => {
 
 class Pokemon {
   constructor(name, height, weight, abilities, types) {
+    // would need to add 'moves' property to this constructor functionl... if I decide to show moves on the card
     ;(this.id = 9001),
       (this.name = name),
       (this.height = height),
       (this.weight = weight),
       (this.abilities = abilities),
-      (this.types = types)
+      (this.types = types)// would need (this.moves = moves) here... if I decide to show moves
   }
 }
 
+const loadedPokemon = []
+
 const pokeHeader = document.querySelector('header')
 const pokeGrid = document.querySelector('.pokegrid')
+
+const loadButton = document.createElement('button')
+loadButton.textContent = 'Load Pokemon'
+pokeHeader.appendChild(loadButton)
+loadButton.addEventListener('click', async () => {
+  removeChildren(pokeGrid)
+  if( loadedPokemon.length === 0) {
+    await loadPokemon(0, 50)
+    calculateHP()
+  } else {
+    loadedPokemon.forEach((item) => populatePokeCard(item))
+  }
+})
 
 const newButton = document.createElement('button')
 newButton.textContent = 'New Pokemon'
 pokeHeader.appendChild(newButton)
 newButton.addEventListener('click', () => {
-  const pokeName = prompt('What is the name of your new Pokemon?', 'Irhemon')
+  const pokeName = prompt('What is the name of your new Pokemon?', 'Thoremon')
   const pokeHeight = prompt("What is the Pokemon's height?", 80)
-  const pokeWeight = prompt("What is the Pokemon's weight?", 2400)
+  const pokeWeight = prompt("What is the Pokemon's weight?", 2000)
   const pokeAbilities = prompt(
     "What are your Pokemon's abilities? (use a comma separated list)",
   )
@@ -35,29 +53,18 @@ newButton.addEventListener('click', () => {
     "What are your Pokemon's types? (up to 2 types separated by a space)",
   )
 
+  //TODO: Prompt the user for a set of moves if you want to show them
+
   const newPokemon = new Pokemon(
     pokeName,
     pokeHeight,
     pokeWeight,
     makeAbilitiesArray(pokeAbilities),
     makeTypesArray(pokeTypes),
+    // makeMovesArray would be called here... if you decide to show moves
   )
   console.log(newPokemon)
   populatePokeCard(newPokemon)
-})
-
-const Button = document.createElement('Button')
-Button.addEventListener('click', () => {
-  const allByType = getAllPokemonByType('water')
-  allByType.forEach((item) => populatePokeCard(item))
-})
-
-
-const otherButton = document.createElement('otherPokemon')
-otherButton.addEventListener('click', () => {
-  let limit = prompt('How many more Pokemon should I load?')
-  let offset = prompt('At which Pokemon ID should I start loading?')
-  loadPokemon(offset, limit) 
 })
 
 function makeAbilitiesArray(commaString) {
@@ -74,7 +81,7 @@ function makeTypesArray(spacedString) {
   })
 }
 
-const loadedPokemon = []
+// similar function named 'makeMovesArray' goes here
 
 async function loadPokemon(offset = 0, limit = 25) {
   const data = await getAPIData(
@@ -90,10 +97,11 @@ async function loadPokemon(offset = 0, limit = 25) {
       abilities: singlePokemon.abilities,
       types: singlePokemon.types,
       moves: singlePokemon.moves.slice(0, 3),
+      hp: singlePokemon.stats[0].base_stat
     }
     loadedPokemon.push(simplifiedPokemon)
     populatePokeCard(simplifiedPokemon)
-  } return simplifiedPokemon
+  }
 }
 
 function populatePokeCard(pokemon) {
@@ -143,10 +151,7 @@ function populateCardBack(pokemon) {
   pokeBack.className = 'cardFace back'
   const label = document.createElement('h4')
   label.textContent = 'Abilities'
-  const label1 = document.createElement('h4')
-  label1.textContent = 'Types'
   pokeBack.appendChild(label)
-
 
   const abilityList = document.createElement('ul')
   pokemon.abilities.forEach((abilityItem) => {
@@ -154,35 +159,15 @@ function populateCardBack(pokemon) {
     listItem.textContent = abilityItem.ability.name
     abilityList.appendChild(listItem)
   })
-  const typeslist = document.createElement('ul')
-  pokemon.types.forEach((pokeType) => {
-    const typeItem = document.createElement('li')
-    typeItem.textContent = pokeType.type.name
-    typeslist.appendChild(typeItem)
-  })
   pokeBack.appendChild(abilityList)
-  pokeBack.appendChild(label1)
-  pokeBack.appendChild(typeslist)
+
+  const pokeHP = document.createElement('h4')
+  pokeHP.textContent = `HP: ${pokemon.hp}`
+  pokeBack.appendChild(pokeHP)
 
   return pokeBack
 }
 
-
-function typesBackground(pokemon, card) {
-  let pokeType1 = pokemon.types[0].type.name
-  let pokeType2 = pokemon.types[1]?.type.name
-  
-  if(!pokeType2) {
-    card.style.setProperty('background', getPokeTypeColor(pokeType1))
-  } else {
-     card.style.setProperty(
-      'background',
-      `linear-gradient(${getPokeTypeColor(pokeType1)}, ${getPokeTypeColor(
-        pokeType2,
-      )})`,
-    )
-  }
-}
 function getPokeTypeColor(pokeType) {
   // if(pokeType === 'grass') return '#00FF00'
   let color
@@ -230,8 +215,18 @@ function filterPokemonByType(type) {
   return loadedPokemon.filter((pokemon) => pokemon.types[0].type.name === type)
 }
 
-await loadPokemon(0, 50)
-
-console.log(filterPokemonByType('grass'))
 // not figured out yet what the UI might be for sorted/filtered pokemon...
+const typeSelect = document.querySelector('.typeSelect')
+typeSelect.addEventListener('change', (event) => {
+  const usersTypeChoice = event.target.value.toLowerCase()
+  const pokemonByType = filterPokemonByType(usersTypeChoice)
+  removeChildren(pokeGrid)
+  pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
+})
 
+function calculateHP() {
+  const mostHP = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})
+
+  const messageArea = document.querySelector('.messageArea')
+  messageArea.textContent = `${mostHP.name[0].toUpperCase()}${mostHP.name.substring(1)} has the most HP at ${mostHP.hp}`
+}
