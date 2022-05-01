@@ -221,3 +221,4 @@ typeSelect.addEventListener('change', (event) => {
   removeChildren(pokeGrid)
   pokemonByType.forEach((singlePokemon) => populatePokeCard(singlePokemon))
 })
+
