@@ -1,9 +1,10 @@
 * {
-  margin: 0;
+  margin: ;
   box-sizing: border-box;
   background-color: rgba(228, 203, 62, 0.877);
 }
 header{
+  margin: 2rem;
 background-color: blue;
 }
 
