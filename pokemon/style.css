@@ -81,7 +81,7 @@ figcaption {
     } 
 
 ul {
-  list-style-type: '\01F525'; 
+  list-style-type: '\01F537'; 
   /* The unicode for the fire emoji */
 }
 
@@ -106,4 +106,5 @@ button {
   background-color: linear-gradient(rgba(0, 0, 255, 0.5), rgba(199, 10, 10, 0.884));
   color: black;
   font-size: large;
+
 }
