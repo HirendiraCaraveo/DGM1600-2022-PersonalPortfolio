@@ -51,7 +51,7 @@ newButton.addEventListener('click', () => {
   const pokeTypes = prompt(
     "What are your Pokemon's types? (up to 2 types separated by a space)",
   )
-  const HP = prompt(
+  const pokeHP = prompt(
     "What are your Pokemon's HP?",
   )
  
@@ -226,7 +226,4 @@ typeSelect.addEventListener('change', (event) => {
 
 function calculateHP() {
   const mostHP = loadedPokemon.reduce((acc, pokemon) => acc.hp > pokemon.hp ? acc : pokemon, {})
-
-  const messageArea = document.querySelector('.messageArea')
-  messageArea.textContent = `${mostHP.name[0].toUpperCase()}${mostHP.name.substring(1)} has the most HP at ${mostHP.hp}`
 }
