@@ -1,6 +1,6 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
-import {  getLastNumber, removeChildren } from '../utils/index.js'
+import { removeChildren } from '../utils/index.js'
 
 const members = [...senators, ...representatives] // modern way to combine arrays... like a genius
 
