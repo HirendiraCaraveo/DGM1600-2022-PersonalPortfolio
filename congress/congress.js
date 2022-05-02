@@ -6,6 +6,7 @@ const members = [...senators, ...representatives] // modern way to combine array
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
+const congressGrid = document.querySelector('.congressGrid')
 const loyaltyList = document.querySelector('.loyaltyList')
 const seniorityButton = document.querySelector('#seniorityButton')
 const birthdayButton = document.querySelector('#birthdayButton')
@@ -69,6 +70,24 @@ function simplifiedMembers(chamberFilter) {
   }
 }
 const simpleSenators = simplifiedSenators()
+function populateCongressGrid(simplePeople) {
+  removeChildren(congressGrid)
+  simplePeople.forEach(person => {
+      let personDiv = document.createElement('div')
+      personDiv.className = 'figureDiv'
+      let personFig = document.createElement('figure')
+      let figImg = document.createElement('img')
+      let figCaption = document.createElement('figcaption')
+
+      figImg.src = person.imgURL
+      figCaption.textContent = `${person.name}`
+
+      personFig.appendChild(figImg)
+      personFig.appendChild(figCaption)
+      personDiv.appendChild(personFig)
+      congressGrid.appendChild(personDiv)
+  })
+}
 
 function populateSenatorDiv(senatorArray) {
   senatorArray.forEach(senator => {
