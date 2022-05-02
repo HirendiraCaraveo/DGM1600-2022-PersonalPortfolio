@@ -15,8 +15,7 @@ seniorityButton.addEventListener('click', () => {
   senioritySort()
 })
 
-birthdayButton.addEventListener('click', () => {
-  birthdaySort()
+birthdayButton.addEventListener('click', () => {birthdaySort()
 })
 
 function simplifiedSenators() {
@@ -139,21 +138,11 @@ simplifiedMembers().forEach(senator => {
 
 
 function senioritySort() {
-  populateCongressGrid(getSimplifiedCongress(senators).sort(
-     (a, b) => a.seniority - b.seniority
- ).reverse())
+  populateCongressGrid(getSimplifiedCongress(senators).sort((a, b) => a.seniority - b.seniority ).reverse())
 }
 
 function birthdaySort() {
- populateCongressGrid(getSimplifiedCongress(senators).sort(
-     (a, b) => a.date_of_birth - b.date_of_birth
- ))
+ populateCongressGrid(getSimplifiedCongress(senators).sort((a, b) => a.date_of_birth - b.date_of_birth))
 }
 
 
-document.getElementById("Rep").addEventListener("click", function() {
-  removeChildren(document.getElementById("Senators"))
-  populateSenatorDiv(simplifiedMembers("Rep"))
-})
-
-populateCongressGrid(getSimplifiedCongress(senators))
