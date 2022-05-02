@@ -10,6 +10,7 @@ body {
 
 header {
   margin: 2rem;
+  background-color: rgb(12, 12, 82);
 }
 
 h1 {
@@ -17,12 +18,10 @@ h1 {
   font-size: xx-large;
   display: flex;
   justify-content: center;
-  color: rgb(1, 1, 92);
+  color: rgba(255, 0, 0, 0.692);
 }
 
-hr{
-  border: .2rem solid red;
-}
+
 h3 {
   text-align: center;
   font-weight: 700;
