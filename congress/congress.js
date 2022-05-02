@@ -12,7 +12,7 @@ const seniorityButton = document.querySelector('#seniorityButton')
 const birthdayButton = document.querySelector('#birthdayButton')
 
 seniorityButton.addEventListener('click', () => {
-  senioritySort()
+  senioritySort(seniorityButton)
 })
 
 birthdayButton.addEventListener('click', () => {birthdaySort()
@@ -136,6 +136,21 @@ simplifiedMembers().forEach(senator => {
   }
 })
 
+function getSimplifiedCongress(congressPeople) {
+  return congressPeople.map(person => {
+      let middleName = person.middle_name ? `${person.middle_name}` : ``
+      return {
+          id: person.id,
+          title: person.title,
+          name: `${person.first_name} ${middleName} ${person.last_name}`,
+          imgURL: `https://www.govtrack.us/static/legislator-photos/${person.govtrack_id}-100px.jpeg`,
+          seniority: parseInt(person.seniority, 10),
+          date_of_birth: parseInt(person.date_of_birth, 10),
+          missed_votes_pct: person.missed_votes_pct,
+          votes_with_party_pct: person.votes_with_party_pct
+      }
+  })
+}
 
 function senioritySort() {
   populateCongressGrid(getSimplifiedCongress(senators).sort((a, b) => a.seniority - b.seniority ).reverse())
