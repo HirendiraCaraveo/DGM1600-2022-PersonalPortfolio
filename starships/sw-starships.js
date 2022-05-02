@@ -8,10 +8,14 @@ const shipViewer = document.querySelector('.shipViewer')
 const modal = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const shipMessage = document.querySelector('.shipMessage')
+const modalBackground = document.querySelector('.modal-background')
+
 
 closeButton.addEventListener('click', () => {
   modal.classList.toggle('is-active')
 })
+
+modalBackground.addEventListener('click', () => modal.classList.toggle('is-active'))
 
 function populateNav() {
   starships.forEach((starship) => {
