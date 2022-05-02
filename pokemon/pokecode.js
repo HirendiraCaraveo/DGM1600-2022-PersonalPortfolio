@@ -165,13 +165,14 @@ function populateCardBack(pokemon) {
   pokeHP.textContent = `HP: ${pokemon.hp}`
   pokeBack.appendChild(pokeHP)
 
-  const typeslist = document.createElement('ol')
-  pokemon.types.forEach((pokeType) => {
-    let typeItem = document.createElement('li')
-    typeItem.textContent = pokeType.type.name
-    typeslist.appendChild(typeItem)
-  })
-  pokeBack.appendChild(typeslist)
+  const pokeHeight = document.createElement('h5')
+  pokeHeight.textContent = `Height: ${pokemon.height}`
+
+  const pokeWeight = document.createElement('h5')
+  pokeWeight.textContent = `Weight: ${pokemon.weight}`
+
+  pokeBack.appendChild(pokeHeight)
+  pokeBack.appendChild(pokeWeight)
 
   return pokeBack
 }
