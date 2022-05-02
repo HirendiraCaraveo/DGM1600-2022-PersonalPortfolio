@@ -1,12 +1,22 @@
 import { senators } from '../data/senators.js'
 import { representatives } from '../data/representatives.js'
-import { getLastNumber, removeChildren } from '../utils/index.js'
+import { removeChildren } from '../utils/index.js'
 
 const members = [...senators, ...representatives] // modern way to combine arrays... like a genius
 
 const senatorDiv = document.querySelector('.senatorsDiv')
 const seniorityHeading = document.querySelector('.seniority')
 const loyaltyList = document.querySelector('.loyaltyList')
+const seniorityButton = document.querySelector('#seniorityButton')
+const birthdayButton = document.querySelector('#birthdayButton')
+
+seniorityButton.addEventListener('click', () => {
+  senioritySort()
+})
+
+birthdayButton.addEventListener('click', () => {
+  birthdaySort()
+})
 
 function simplifiedSenators() {
   return senators.map(senator => {
@@ -109,8 +119,22 @@ simplifiedMembers().forEach(senator => {
 })
 
 
+function senioritySort() {
+  populateCongressGrid(getSimplifiedCongress(senators).sort(
+     (a, b) => a.seniority - b.seniority
+ ).reverse())
+}
+
+function birthdaySort() {
+ populateCongressGrid(getSimplifiedCongress(senators).sort(
+     (a, b) => a.date_of_birth - b.date_of_birth
+ ))
+}
+
+
 document.getElementById("Rep").addEventListener("click", function() {
   removeChildren(document.getElementById("Senators"))
   populateSenatorDiv(simplifiedMembers("Rep"))
 })
 
+populateCongressGrid(getSimplifiedCongress(senators))
