@@ -13,6 +13,7 @@ const birthdayButton = document.querySelector('#birthdayButton')
 
 seniorityButton.addEventListener('click', () => {
   senioritySort(seniorityButton)
+  removeChildren(senatorDiv)
 })
 
 birthdayButton.addEventListener('click', () => {birthdaySort()
