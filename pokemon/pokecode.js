@@ -165,6 +165,14 @@ function populateCardBack(pokemon) {
   pokeHP.textContent = `HP: ${pokemon.hp}`
   pokeBack.appendChild(pokeHP)
 
+  const typeslist = document.createElement('ol')
+  pokemon.types.forEach((pokeType) => {
+    let typeItem = document.createElement('li')
+    typeItem.textContent = pokeType.type.name
+    typeslist.appendChild(typeItem)
+  })
+  pokeBack.appendChild(typeslist)
+
   return pokeBack
 }
 
